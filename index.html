@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="libraries/p5.min.js"></script>
+        <script type="text/javascript">
+            new p5(); // On-demand global mode to use color() outside of setup
+        </script>
+        <link rel="stylesheet" type="text/css" href="src/style.css">
+        <meta charset="utf-8">
+
+        <title>BinaryTree</title>
+    </head>
+    <body>
+        <script src="src/Node.js"></script>
+        <script src="src/BinaryTree.js"></script>
+        <script src="src/Actions.js"></script>
+
+        <div id = "canvas-placeholder"></div>
+        <script type="text/javascript">
+
+            var CANVASWIDTH = window.innerWidth;
+            var CANVASHEIGHT = window.innerHeight;
+
+            const TREEX = CANVASWIDTH / 2;
+            const TREEY = 100;            
+            const BACKGROUNDCOLOR ='#e9e0b3';
+
+            function setup() {
+                var canvas = createCanvas(CANVASWIDTH, CANVASHEIGHT);
+                canvas.parent('canvas-placeholder');
+                var tree = new BinaryTree(TREEX, TREEY, BACKGROUNDCOLOR);
+                var controls = new Actions(tree)
+            }
+
+        </script>
+    </body>
+</html>
